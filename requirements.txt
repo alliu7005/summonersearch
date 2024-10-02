@@ -1,0 +1,12 @@
+cs50
+Flask
+requests
+random2
+cassiopeia
+datetime
+flake8
+Pillow
+merakicommons
+cassiopeia-diskstore
+pkg_resources
+datapipelines
