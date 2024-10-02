@@ -1,0 +1,18 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Error
+{% endblock %}
+
+{% block main %}
+    <div>
+        
+        <p>
+            Error code {{code}}: {{message}}
+        </p>
+    </div>
+    <form action="/" method = "get">
+        <div class = "form=group">
+            <button type = "submit" class = "form=group">Return</button>
+        </div>
+{% endblock %}

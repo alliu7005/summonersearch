@@ -1,0 +1,78 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Summoner
+{% endblock %}
+
+{% block script %}
+    <script>
+        
+        
+    </script>
+
+
+{% endblock %}
+
+
+
+{% block main %}
+    <h1 class="top-margin left-margin">
+        {{name}} ({{region}}) <br> Level {{level}}
+    </h1>
+    <p class="left-margin">
+        Winrate: {{winrate}}% </br>
+        Total matches loaded: {{matches}} </br>
+        
+    </p>
+    <table class="left-margin">
+		<thead>
+			<tr>
+				<th>Champion Played</th>
+				<th>Games</th>
+			</tr>
+		</thead>
+		<tbody>
+			{% for champ, games in champ_counter.items() %}
+				<tr>
+					<td>{{ champ }}</td>
+					<td>{{ games }}</td>
+				</tr>
+			{% endfor %}
+		</tbody>
+	</table>  
+    <form action="/" method = "get">
+        <div class = "form-group">
+            <button type = "submit" class = "form=group">Return</button>
+        </div>
+    
+    </form>
+    <form action="/query" method="post">
+        
+        <div class = "form-group">
+            <select name="category" id="Stat">
+                <label for="Stat">Query For:</label>
+                <option value="username">Username</option>
+                <option value="kda">Kda</option>
+                <option value="vision">Vision</option>
+                <option value="cs">Cs/Min</option>
+                <option value="result">Result</option>
+                <option value="role">Role</option>
+                <option value="champion">Champion</option>
+            </select>
+        </div>
+        <div class = "form-group">
+            <select name = "comparer" id = "comparer">
+                <option value="=">=</option>
+                <option value="<"><</option>
+                <option value=">">></option>
+            </select>
+        </div>
+        <div class = "form-group">
+            <input autocomplete="off" autofocus name="statvalue" type="text">
+        </div>
+        <button type="submit" class = "form-group">Query</button>
+        
+    </form>
+    
+    
+{% endblock %}

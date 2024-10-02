@@ -1,0 +1,46 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Queried
+{% endblock %}
+
+{% block main %}
+    
+    <table class="center top-margin">
+		<thead>
+			<tr>
+				<th>Username</th>
+				<th>Kda</th>
+				<th>Vision</th>
+				<th>Cs/Min</th>
+				<th>Result</th>
+				<th>Champion</th>
+				<th>Role</th>
+				<th>Date</th>
+			</tr>
+		</thead>
+		<tbody>
+			{% for match in matches %}
+				<tr>
+					<td>{{ match["username"] }}</td>
+					<td>{{ match["kda"]  }} </td>
+					<td>{{ match["vision"] }}</td>
+					<td>{{ match["cs"]  }} </td>
+					<td>{{ match["result"] }}</td>
+					<td>{{ match["champion"]  }} </td>
+					<td>{{ match["role"] }}</td>
+					<td>{{ match["date"]  }} </td>
+				</tr>
+			{% endfor %}
+		</tbody>
+	</table>
+	<form action="/" method="get">
+   		<div class="center top-margin">
+        	<button type="submit">Return</button>
+        </div>
+    </form>
+        
+    
+
+        
+{% endblock %}
